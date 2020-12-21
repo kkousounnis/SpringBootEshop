@@ -39,5 +39,14 @@ public class CustomerController {
         view.addAttribute("msg", msg);
         return ("listcustomers");
     }
+    
+    @RequestMapping("/newcustomer")
+    public String newCustomer(ModelMap view){
+        Customer customer = new Customer();
+        view.addAttribute("customer", customer);
+        view.addAttribute("listurl", listurl);
+        return("newcustomer");       
+    
+    }
 
 }

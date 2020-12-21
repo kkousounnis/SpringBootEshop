@@ -13,12 +13,12 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-item nav-link" href="new">NewCustomer</a>                            
+                        <a class="nav-item nav-link" href="newcustomer">NewCustomer</a>                            
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-item nav-link" href="customer/listcustomers">NewCustomer</a>                            
+                        <a class="nav-item nav-link" href="listcustomers">NewCustomer</a>                            
                     </li>
                 </ul> 
             </nav>
