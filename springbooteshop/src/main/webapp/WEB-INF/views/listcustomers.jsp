@@ -27,7 +27,7 @@
                 </tr>
                 <c:forEach items="${customers}" var="customer">
                 <tr>
-                    <td><a href="c:url value='${editurl}/${customer.id}' ">update </a></td>
+                    <td><a href="<c:url value='${editurl}/${customer.id}'/> ">update </a></td>
                     <td>${customer.firstName}</td>
                     <td>${customer.lastName}</td>
                     <td>${customer.tel}</td>

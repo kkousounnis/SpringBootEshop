@@ -41,39 +41,47 @@ public class CustomerController {
         view.addAttribute("msg", msg);
         return ("listcustomers");
     }
-    
+
     @RequestMapping("/newcustomer")
-    public String newCustomer(ModelMap view){
+    public String newCustomer(ModelMap view) {
         Customer customer = new Customer();
         view.addAttribute("customer", customer);
         view.addAttribute("listurl", listurl);
-        return("newcustomer");       
-    
+        return ("newcustomer");
+
     }
-    
+
     @PostMapping("/newcustomer")
-    public String saveCustomer(ModelMap view, Customer customer){
-        
-        if(customerService.save(customer)){
+    public String saveCustomer(ModelMap view, Customer customer) {
+
+        if (customerService.save(customer)) {
             view.addAttribute("message", new String("Customer saved succesfully!"));
         } else {
-           
+
             view.addAttribute("message", new String("Customer failed to be saved!"));
         }
         view.addAttribute("listurl", listurl);
         return ("newcustomer");
-    
+
     }
-    
+
     @GetMapping("/delete/{id}")
-    public String deleteCustomer(ModelMap view, @PathVariable int id){
+    public String deleteCustomer(ModelMap view, @PathVariable int id) {
         if (customerService.delete(id)) {
             view.addAttribute("msg", new String("Deleted Successfully!"));
         } else {
             view.addAttribute("msg", new String("Not Deleted!"));
         }
         return ("redirect:/customer/listcustomers");
-    
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editCustomer(ModelMap view, @PathVariable int id) {
+        Customer customer = customerService.findById(id);
+        view.addAttribute("customer", customer);
+        view.addAttribute("updateurl", updateurl);
+
+        return ("editcustomer");
     }
 
 }
