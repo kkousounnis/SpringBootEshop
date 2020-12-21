@@ -20,6 +20,6 @@ public class ProductController {
     public String productById(ModelMap view, @PathVariable String id) {
        Product product = productService.findById(Integer.parseInt(id));
        view.addAttribute("product", product);
-       return "product";
+       return ("product");
     }
 }
