@@ -16,15 +16,24 @@
         <link href="<c:url value="/resources/bootstrap.min.css" />" rel="stylesheet">
     </head>
     <body>
-       <div class="container">
+        <div class="container">
             <%@ include file="../mymenu.jsp" %> 
             <h1>Register a new Customer</h1> 
             <form:form method="POST" action="newcustomer" modelAttribute="customer">
+
                 <form:input type="hidden" path="id" id="id"/>
-                First Name: <form:input path="firstName" /><br />
-                Last Name: <form:input path="lastName" /><br />
-                Subject: <form:input type="number" path="tel" /><br />            
-                Subject: <form:input type="email" path="email" /><br />             
+                <div class="form-group">
+                    First Name: <form:input class="form-control" path="firstName" /><br />
+                </div>
+                <div class="form-group">
+                    Last Name: <form:input class="form-control" path="lastName" /><br />
+                </div>
+                <div class="form-group">
+                    Telephone: <form:input class="form-control" type="number" path="tel" /><br /> 
+                </div>
+                <div class="form-group">
+                    Email <form:input type="email" class="form-control" path="email" /><br />   
+                </div>
                 <input type="submit">
             </form:form>
             <div id="msg">${message}</div>

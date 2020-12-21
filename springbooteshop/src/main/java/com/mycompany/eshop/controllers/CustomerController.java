@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -46,6 +47,18 @@ public class CustomerController {
         view.addAttribute("customer", customer);
         view.addAttribute("listurl", listurl);
         return("newcustomer");       
+    
+    }
+    
+    @PostMapping("/newcustomer")
+    public String saveCustomer(ModelMap view, Customer customer){
+        if(customerService.save(customer)){
+            view.addAttribute("message", new String("Customer saved."));
+        }else{
+            view.addAttribute("message", new String("Customer not saved."));
+        }
+        view.addAttribute("listurl", listurl);
+        return ("newcustomer");
     
     }
 
