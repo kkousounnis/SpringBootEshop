@@ -32,7 +32,7 @@
                     <td>${customer.lastName}</td>
                     <td>${customer.tel}</td>
                     <td>${customer.email}</td>
-                    <td><a href="<c:url value='${deleteurl}/${trainer.id}' />">delete</a></td>
+                    <td><a href="<c:url value='${deleteurl}/${customer.id}' />">delete</a></td>
                 </tr>
                 </c:forEach>
             </table>

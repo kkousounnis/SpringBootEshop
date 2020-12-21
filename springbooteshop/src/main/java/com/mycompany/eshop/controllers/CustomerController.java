@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -61,6 +62,17 @@ public class CustomerController {
         }
         view.addAttribute("listurl", listurl);
         return ("newcustomer");
+    
+    }
+    
+    @GetMapping("/delete/{id}")
+    public String deleteCustomer(ModelMap view, @PathVariable int id){
+        if (customerService.delete(id)) {
+            view.addAttribute("msg", new String("Deleted Successfully!"));
+        } else {
+            view.addAttribute("msg", new String("Not Deleted!"));
+        }
+        return ("redirect:/customer/listcustomers");
     
     }
 
