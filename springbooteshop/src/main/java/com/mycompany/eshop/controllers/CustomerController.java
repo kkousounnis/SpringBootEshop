@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/customer")
 public class CustomerController {
 
-    private String listurl = "list";
+    private String listurl = "customer/listcustomers";
     private String editurl = "edit";
     private String deleteurl = "delete";
     private String updateurl = "update";
@@ -52,10 +52,12 @@ public class CustomerController {
     
     @PostMapping("/newcustomer")
     public String saveCustomer(ModelMap view, Customer customer){
+        
         if(customerService.save(customer)){
-            view.addAttribute("message", new String("Customer saved."));
-        }else{
-            view.addAttribute("message", new String("Customer not saved."));
+            view.addAttribute("message", new String("Customer saved succesfully!"));
+        } else {
+           
+            view.addAttribute("message", new String("Customer failed to be saved!"));
         }
         view.addAttribute("listurl", listurl);
         return ("newcustomer");

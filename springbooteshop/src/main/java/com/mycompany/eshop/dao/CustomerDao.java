@@ -18,8 +18,9 @@ public class CustomerDao extends AbstractDao<Integer, Customer> {
     }
 
     public boolean save(Customer customer) {
-        return (persist(customer));
-
+        boolean notSaved = (persist(customer));
+        if(notSaved) return false;
+        return true;
     }
 
     public List<Customer> findAll() {

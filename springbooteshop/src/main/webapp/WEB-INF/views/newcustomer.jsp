@@ -37,7 +37,7 @@
                 <input type="submit">
             </form:form>
             <div id="msg">${message}</div>
-            <div id="list"><a href="<c:url value='/${listurl}' />">Back to the list of Trainers</a></div>
+            <div id="list"><a href="<c:url value='/${listurl}' />">Back to the list of Customers</a></div>
         </div> 
     </body>
 </html>
