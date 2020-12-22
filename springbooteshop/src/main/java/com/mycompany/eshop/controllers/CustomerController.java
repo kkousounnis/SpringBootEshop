@@ -80,8 +80,16 @@ public class CustomerController {
         Customer customer = customerService.findById(id);
         view.addAttribute("customer", customer);
         view.addAttribute("updateurl", updateurl);
-
+        view.addAttribute("listurl", listurl);
         return ("editcustomer");
+    }
+
+    @PostMapping("/update")
+    public String updateCustomer(ModelMap view, Customer customer) {
+        customerService.update(customer);
+        
+        view.addAttribute("msg", new String(""));
+        return ("redirect:/customer/listcustomers");
     }
 
 }

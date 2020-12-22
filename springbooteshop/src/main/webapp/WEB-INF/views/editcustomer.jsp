@@ -16,11 +16,11 @@
     </head>
     <body>
         <div class="container">
-            <%@ include file="../mymenu.jsp" %> 
+             
             <h1>Update a Customer</h1>
 
             <%
-                String updateUrlFINAL = request.getContextPath() + "/" + request.getAttribute("updateurl");
+                String updateUrlFINAL = request.getContextPath() + "/customer/" + request.getAttribute("updateurl");
                 session.setAttribute("updateUrlFINAL", updateUrlFINAL);
             %>
             <form:form method="POST" action="${updateUrlFINAL}" modelAttribute="customer">
@@ -40,7 +40,7 @@
                 <input type="submit" value="Update">
             </form:form>
             <div id="msg">${message}</div>
-            <div id="list"><a href="<c:url value='/${listurl}' />">Back to the list of customers</a></div>
+            <div id="list"><a href="<c:url value='/${listurl}' />">Back to the list of Customers</a></div>
         </div>
     </body>
 </html>
