@@ -37,3 +37,10 @@ CREATE TABLE `eshop1`.`orders2_details` (
 PRIMARY KEY (`id`), 
 CONSTRAINT `fk_orders2_details_orders2_id__orders2_id` FOREIGN KEY (`orders2_id`) REFERENCES `eshop1`.`orders2` (`id`),
 CONSTRAINT `fk_orders2_details_products_id__products_id` FOREIGN KEY (`products_id`) REFERENCES `eshop1`.`products` (`id`));
+
+INSERT INTO `orders2`(`date`,`customers_id`,`total_price`)
+VALUES('2020/01/01', 1, 120);
+
+INSERT INTO `orders2_details`(`orders2_id`,`products_id`,`price`, `quantity`)
+VALUES(1, 1, 1000, 1);
+
