@@ -20,7 +20,7 @@ public class OrderController {
 
     @RequestMapping(value = {"/{id}"})
     public String showOrder(ModelMap view, @PathVariable Integer id) {
-        view.addAttribute("projectName", "Grocery Store");
+        view.addAttribute("projectName", "My Eshop");
         Orders order = ordersService.findById(id);
         view.addAttribute("order", order);
         return ("order");
@@ -28,7 +28,7 @@ public class OrderController {
 
     @RequestMapping("/all")
     public String showOrders(ModelMap view) {
-        view.addAttribute("projectName", "Grocery Store");
+        view.addAttribute("projectName", "My Eshop");
         List<Orders> orders;
         orders = ordersService.findAll();
         view.addAttribute("order", orders);
@@ -55,7 +55,7 @@ public class OrderController {
     public String ordersByCustomerId(ModelMap view, @PathVariable String id) {
         List<Orders> orders
                 = ordersService.findByCustomerId(id);
-        view.addAttribute("projectName", "Grocery Store");
+        view.addAttribute("projectName", "My Eshop");
         view.addAttribute("order", orders);
         return ("order");
     }

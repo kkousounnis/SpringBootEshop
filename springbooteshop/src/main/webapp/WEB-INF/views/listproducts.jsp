@@ -20,19 +20,17 @@
             <table class="table table-hover">
                 <tr>
                     <td>Update</td>
-                    <td>First Name</td>
-                    <td>Last Name</td>
-                    <td>Telephone</td>
-                    <td>Email</td>                    
+                    <td>Product Name</td>
+                    <td>Price</td>
+                    <td>Quantity</td>                   
                 </tr>
-                <c:forEach items="${customers}" var="customer">
+                <c:forEach items="${products}" var="product">
                 <tr>
-                    <td><a href="<c:url value='${editurl}/${customer.id}'/> ">update </a></td>
-                    <td>${customer.firstName}</td>
-                    <td>${customer.lastName}</td>
-                    <td>${customer.tel}</td>
-                    <td>${customer.email}</td>
-                    <td><a href="<c:url value='${deleteurl}/${customer.id}' />">delete</a></td>
+                    <td><a href="<c:url value='${editurl}/${product.id}'/> ">update </a></td>
+                    <td>${product.name}</td>
+                    <td>${product.price}</td>
+                    <td>${product.quantity}</td>
+                    <td><a href="<c:url value='${deleteurl}/${product.id}' />">delete</a></td>
                 </tr>
                 </c:forEach>
             </table>

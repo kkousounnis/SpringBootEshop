@@ -13,14 +13,25 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-item nav-link" href="newcustomer">New Customer</a>                            
+                        <a class="nav-item nav-link" href="<%=request.getContextPath()%>/customer/newcustomer">New Customer</a>                            
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-item nav-link" href="listcustomers"> List Customers</a>                            
+                        <a class="nav-item nav-link" href="<%=request.getContextPath()%>/customer/listcustomers"> List Customers</a>                            
                     </li>
                 </ul> 
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-item nav-link" href="<%=request.getContextPath()%>/product/newproduct">New Product</a>                            
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-item nav-link" href="<%=request.getContextPath()%>/product/listproducts"> List Products</a>                            
+                    </li>
+                </ul> 
+
             </nav>
         </div>
     </div>
