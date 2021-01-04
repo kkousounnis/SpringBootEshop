@@ -6,6 +6,7 @@
 package com.mycompany.eshop.controllers;
 
 import com.mycompany.eshop.entities.Customer;
+import com.mycompany.eshop.entities.dto.CustomerDTO;
 import com.mycompany.eshop.services.CustomerService;
 import java.util.List;
 
@@ -35,12 +36,12 @@ public class CustomerRestController {
     @Autowired
     CustomerService customerService;
     @CrossOrigin("http://127.0.0.1:5500")
-//    @RequestMapping(value = {"/{id}"})
-//    public CustomerDTO showCustomer(ModelMap view, @PathVariable String id) {
-//        view.addAttribute("projectName", "Grocery Store");
-//        CustomerDTO customerDTO = customerService.findByIdDTO(Integer.parseInt(id));
-//        return (customerDTO);
-//    }
+    @RequestMapping(value = {"/{id}"})
+    public CustomerDTO showCustomer(ModelMap view, @PathVariable String id) {
+        view.addAttribute("projectName", "Grocery Store");
+        CustomerDTO customerDTO = customerService.findByIdDTO(Integer.parseInt(id));
+        return (customerDTO);
+    }
 //
 //    @GetMapping("/{id}/orders")
 //    public CustomerOrdersDTO showCustomerOrders(ModelMap view, @PathVariable String id) {
