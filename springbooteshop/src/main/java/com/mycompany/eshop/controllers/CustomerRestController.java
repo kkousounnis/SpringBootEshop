@@ -35,7 +35,7 @@ public class CustomerRestController {
 
     @Autowired
     CustomerService customerService;
-    @CrossOrigin("http://127.0.0.1:5500")
+    @CrossOrigin("http://companyemployee.42web.io/")
     @RequestMapping(value = {"/{id}"})
     public CustomerDTO showCustomer(ModelMap view, @PathVariable String id) {
         view.addAttribute("projectName", "Grocery Store");
